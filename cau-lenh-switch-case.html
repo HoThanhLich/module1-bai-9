@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch-case</title>
+</head>
+<body>
+<input type="text" id="nhapThang" placeholder="thang 1">
+<input type="button" value="Tinh so ngay" style="background-color: #2454ff;color: white; border-radius: 3px"
+       onclick="tinhSoNgay()">
+<p id="traKetQua"></p>
+<script>
+    function tinhSoNgay() {
+        let soThang = parseInt(document.getElementById("nhapThang").value);
+
+
+        if (soThang > 0 && soThang < 13) {
+            switch (soThang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12: {
+                    document.getElementById('traKetQua').innerHTML = "Thang " + soThang + " co 31 ngay";
+                    break;
+                }
+                case 4:
+                case 6:
+                case 9:
+                case 11: {
+                    document.getElementById('traKetQua').innerHTML = "Thang " + soThang + " co 30 ngay";
+                    break;
+                }
+                default : {
+                    document.getElementById('traKetQua').innerHTML = "Thang " + soThang + " co 28 hoac 29 ngay";
+                    break;
+                }
+            }
+        } else document.getElementById("traKetQua").innerHTML = " so thang khong hop le !!!"
+    }
+
+</script>
+
+</body>
+</html>

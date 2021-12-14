@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May-tinh-don-gian</title>
+    <style>
+        .phim{
+            color: blue;
+            border: none;
+        }
+        .nut{
+            width: 60px; height: 50px;
+            color: blue; font-size: 175%;
+            background-color: #867d75;
+        }
+
+        #manHinh{
+            font-size: 30px; color: blue;
+            width: 250px;height: 40px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<table border="4">
+    <tr>
+        <td colspan="4"><input type="text" id="manHinh" placeholder="1"></td>
+    </tr>
+    <tr>
+        <td class="phim"><button class="nut" onclick="nhapSo1()" id="1">1</button></td>
+        <td class="phim"><button class="nut" onclick="nhapSo2()" id="2">2</button></td>
+        <td class="phim"><button class="nut" onclick="nhapSo3()" id="3">3</button></td>
+        <td class="phim"><button class="nut" onclick="tinhTong()" id="+">+</button></td>
+    </tr>
+    <tr>
+        <td class="phim"><button class="nut">4</button></td>
+        <td class="phim"><button class="nut">5</button></td>
+        <td class="phim"><button class="nut">6</button></td>
+        <td class="phim"><button class="nut">-</button></td>
+    </tr>
+    <tr>
+        <td class="phim"><button class="nut">7</button></td>
+        <td class="phim"><button class="nut">8</button></td>
+        <td class="phim"><button class="nut">9</button></td>
+        <td class="phim"><button class="nut">x</button></td>
+    </tr>
+    <tr>
+        <td class="phim"><button class="nut">C</button></td>
+        <td class="phim"><button class="nut">0</button></td>
+        <td class="phim"><button class="nut">=</button></td>
+        <td class="phim"><button class="nut">/</button></td>
+</tr>
+</table>
+</body>
+</html>
