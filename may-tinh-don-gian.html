@@ -2,54 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>May-tinh-don-gian</title>
+    <title>Calculator</title>
     <style>
-        .phim{
-            color: blue;
-            border: none;
-        }
-        .nut{
-            width: 60px; height: 50px;
-            color: blue; font-size: 175%;
-            background-color: #867d75;
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
         }
 
-        #manHinh{
-            font-size: 30px; color: blue;
-            width: 250px;height: 40px;
+        #console {
+            width: 210px;
+            height: 40px;
+            font-size: 16px;
             text-align: right;
         }
     </style>
 </head>
 <body>
-<table border="4">
+<table>
     <tr>
-        <td colspan="4"><input type="text" id="manHinh" placeholder="1"></td>
+        <td colspan="4">
+            <input disabled id="console" type="text" value="0">
+        </td>
     </tr>
     <tr>
-        <td class="phim"><button class="nut" onclick="nhapSo1()" id="1">1</button></td>
-        <td class="phim"><button class="nut" onclick="nhapSo2()" id="2">2</button></td>
-        <td class="phim"><button class="nut" onclick="nhapSo3()" id="3">3</button></td>
-        <td class="phim"><button class="nut" onclick="tinhTong()" id="+">+</button></td>
+        <td>
+            <button onclick="pressButton('1')">1</button>
+        </td>
+        <td>
+            <button onclick="pressButton('2')">2</button>
+        </td>
+        <td>
+            <button onclick="pressButton('3')">3</button>
+        </td>
+        <td>
+            <button onclick="pressButton('+')">+</button>
+        </td>
     </tr>
     <tr>
-        <td class="phim"><button class="nut">4</button></td>
-        <td class="phim"><button class="nut">5</button></td>
-        <td class="phim"><button class="nut">6</button></td>
-        <td class="phim"><button class="nut">-</button></td>
+        <td>
+            <button onclick="pressButton('4')">4</button>
+        </td>
+        <td>
+            <button onclick="pressButton('5')">5</button>
+        </td>
+        <td>
+            <button onclick="pressButton('6')">6</button>
+        </td>
+        <td>
+            <button onclick="pressButton('-')">-</button>
+        </td>
     </tr>
     <tr>
-        <td class="phim"><button class="nut">7</button></td>
-        <td class="phim"><button class="nut">8</button></td>
-        <td class="phim"><button class="nut">9</button></td>
-        <td class="phim"><button class="nut">x</button></td>
+        <td>
+            <button onclick="pressButton('7')">7</button>
+        </td>
+        <td>
+            <button onclick="pressButton('8')">8</button>
+        </td>
+        <td>
+            <button onclick="pressButton('9')">9</button>
+        </td>
+        <td>
+            <button onclick="pressButton('*')">x</button>
+        </td>
     </tr>
     <tr>
-        <td class="phim"><button class="nut">C</button></td>
-        <td class="phim"><button class="nut">0</button></td>
-        <td class="phim"><button class="nut">=</button></td>
-        <td class="phim"><button class="nut">/</button></td>
-</tr>
+        <td>
+            <button onclick="clearConsole()">C</button>
+        </td>
+        <td>
+            <button onclick="pressButton('0')">0</button>
+        </td>
+        <td>
+            <button onclick="calculate()">=</button>
+        </td>
+        <td>
+            <button onclick="pressButton('/')">/</button>
+        </td>
+    </tr>
 </table>
+<script>
+    function pressButton(number) {
+        let console = document.getElementById("console");
+        console.value += number;
+    }
+
+    function clearConsole() {
+        let console = document.getElementById("console");
+        console.value = "";
+    }
+
+    //eval() => để tính biểu thức trong js
+    //VD: eval('3+5') => 8
+    function calculate() {
+        let console = document.getElementById("console").value;
+        let result = eval(console);
+        document.getElementById("console").value = result;
+    }
+</script>
 </body>
 </html>
