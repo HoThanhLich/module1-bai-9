@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai-2</title>
+</head>
+<body>
+<input type="text" id="age" >
+<input type="button" onclick="check()" value="kiem tra">
+<p id="traKetQua"></p>
+<script>
+    function check() {
+        let age = document.getElementById('age').value;
+        age = parseInt(age);
+        if( age >= 15){
+            document.getElementById('traKetQua').innerHTML = "da du tuoi hoc lop 10"
+        }else             document.getElementById('traKetQua').innerHTML = "chua du tuoi hoc lop 10"
+
+    }
+</script>
+</body>
+</html>

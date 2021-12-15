@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+<h2>Nhập điểm</h2>
+<table>
+    <tr>
+        <td>Bài kiểm tra</td>
+        <td><input type="text" id="diem1" placeholder="20%" width="50px"></td>
+        <td rowspan="3"><input type="button" value="xếp loại" style="background-color: blue; color: white"
+                               onclick="xepLoai()"></td>
+    </tr>
+    <tr>
+        <td>Bài thi giữa kỳ</td>
+        <td><input type="text" id="diem2" placeholder="30%" width="50px"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Bài thi cuối kỳ</td>
+        <td><input type="text" id="diem3" placeholder="50%" width="50px"></td>
+        <td></td>
+    </tr>
+</table>
+<br>
+<p id="traKetQua"></p>
+<script>
+    function xepLoai() {
+        let diem1 = parseFloat(document.getElementById("diem1").value);
+        let diem2 = parseFloat(document.getElementById("diem2").value);
+        let diem3 = parseFloat(document.getElementById("diem3").value);
+
+        let diemTb = diem1 * 0.2 + diem2 * 0.3 + diem3 * 0.5;
+        if (diemTb >= 9) {
+            document.getElementById('traKetQua').innerHTML = "Xếp Loại: Xuất sắc";
+        } else if (diemTb >= 8) {
+            document.getElementById('traKetQua').innerHTML = "Xếp Loại: Giỏi";
+        } else if (diemTb >= 6.5) {
+            document.getElementById('traKetQua').innerHTML = "Xếp Loại: Khá";
+        } else if (diemTb >= 5) {
+            document.getElementById('traKetQua').innerHTML = "Xếp Loại: Trung Bình";
+        } else if (diemTb >= 3.5) {
+            document.getElementById('traKetQua').innerHTML = "Xếp Loại: Yếu";
+        } else
+            document.getElementById('traKetQua').innerHTML = "Xếp Loại: Kém";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai-3</title>
+</head>
+<body>
+<input type="text" id="number">
+<input type="button" onclick="check()" value="kiem tra">
+<p id="traKetQua"></p>
+<script>
+    function check() {
+        let a = document.getElementById('number').value;
+        a = parseFloat(a);
+        if (a == 0) {
+            document.getElementById('traKetQua').innerHTML = 'day la so khong'
+        } else {
+            if (a % 1 == 0) {
+                if (a > 0) {
+                    document.getElementById('traKetQua').innerHTML = 'day la so nguyen duong'
+                } else
+                    document.getElementById('traKetQua').innerHTML = 'day la so nguyen am'
+            } else
+                document.getElementById('traKetQua').innerHTML = 'day khong phai la so nguyen'
+
+        }
+
+    }
+</script>
+</body>
+</html>

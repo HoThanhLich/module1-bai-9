@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai-7</title>
+</head>
+<body>
+<!--Phí thuê bao: 25000đ-->
+<!--50 phút gọi đầu tiên: 600đ/phút-->
+<!--từ 50 phút - 150 phút tiếp theo: 400đ/phút-->
+<!--từ 150 phút - 200 phút tiếp theo: 200đ/phút-->
+<!--từ sau 200 phút : 100đ/phút-->
+
+<script>
+    const cuocThueBao = 25000; // phí thuê bao hàng tháng
+    let cuocPhi = 0;
+    let thoiGianGoi = parseFloat(prompt('Nhập số phút gọi:'));
+    let tongChiPhi;
+
+    if (thoiGianGoi >= 200) {
+        cuocPhi = 50 * 600 + 100 * 400 + 200 * 50 + 100 * (thoiGianGoi - 200);
+    } else if (thoiGianGoi >= 150) {
+        cuocPhi = 50 * 600 + 100 * 400 + 200 * (thoiGianGoi - 150);
+    } else if (thoiGianGoi >= 50) {
+        cuocPhi = 50 * 600 + 400 * (thoiGianGoi - 50)
+    } else {
+        cuocPhi = 600 * thoiGianGoi;
+    }
+    tongChiPhi = cuocThueBao + cuocPhi;
+    let message = 'Tổng số tiền cước: ' + tongChiPhi + ' VND.';
+    alert(message);
+
+</script>
+</body>
+</html>
